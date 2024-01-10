@@ -1,0 +1,174 @@
+@import "reset.css";
+
+@font-face {
+    font-family: "EF_jejudoldam";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_jejudoldam.woff2")
+    format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GmarketSansBold";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff")
+    format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "HSSummer";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/HSSummer.woff")
+    format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "TheJamsil5Bold";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2")
+    format("woff2");
+    font-weight: 100;
+    font-style: normal;
+}
+
+{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "GmarketSansMedium", sans-serif;
+    background-color: #3f455d;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-info {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    right: 10px;
+    padding: 10px 20px;
+    width: 140px;
+    border-radius: 16px;
+    background-color: #4d567c;
+}
+
+.user-info > div {
+    margin-top: 7px;
+}
+
+a,
+button {
+    color: white;
+    text-decoration: none;
+}
+
+#contents {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 120px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title h1 {
+    font-family: "EF_jejudoldam", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    letter-spacing: 0.4em;
+    row-gap: 10px;
+    margin-bottom: 20px;;
+    cursor: pointer;
+}
+
+.explain {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.explain p {
+    font-family: "GmarketSansBold", sans-serif;
+    font-size: 17px;
+    letter-spacing: 1.5px;
+}
+
+#copyright-wrap {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 30px;
+    color: #a5a5a5;
+}
+
+.buttons a,
+.buttons button {
+    margin: 5px;
+    padding: 10px;
+    background-color: #4d567c;
+    border-radius: 16px;
+    box-shadow: 1px 1px 2px #252529;
+    overflow: hidden;
+}
+
+.buttons a:hover,
+.buttons button:hover {
+    background-color: #8d2e3e;
+}
+
+.buttons {
+    margin-top: 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header .buttons {
+    position: absolute;
+}
+
+.header .buttons {
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: 10px;
+    top: 50px;
+}
+
+.copyright {
+    margin: 5px;
+}
+
+.copyright a {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    color: #a5a5a5;
+}
+
+.copyright a:hover {
+    border-bottom: 1px solid #a5a5a5;
+}

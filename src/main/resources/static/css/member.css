@@ -1,0 +1,77 @@
+@import "default.css";
+
+.text-filed {
+    width: 200px;
+}
+
+.error p {
+    margin-top: 3px;
+    text-align: center;
+    color: #f8274f;
+}
+
+.example p {
+    margin-top: 3px;
+    text-align: center;
+    color: #cccccc;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 400px;
+}
+
+.input-box {
+    position: relative;
+    margin: 10px 0;
+}
+
+label {
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    font-size: 12pt;
+    color: #aaa;
+}
+
+label:hover {
+    cursor: text;
+}
+
+.input-box > input {
+    margin-top: 10px;
+    border: none;
+    border-radius: 12px;
+    border-bottom: solid 1px #ccc;
+    padding-top: 13px;
+    padding-left: 10px;
+    font-size: 14pt;
+    width: 100%;
+}
+
+input:focus + label {
+    position: absolute;
+    font-size: 10px;
+    left: 10px;
+    top: 13px;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+}
+
+input:focus {
+    outline: none;
+    border-bottom: solid 1px darkslategray;
+    transition-duration: 0.7s;
+}
+
+input:not(:placeholder-shown) + label {
+    position: absolute;
+    font-size: 10px;
+    left: 10px;
+    top: 13px;
+}

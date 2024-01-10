@@ -2,6 +2,7 @@ package com.example.takemehome.controller;
 
 import com.example.takemehome.data.dto.user.MemberDto;
 import com.example.takemehome.service.impl.UserMemberServiceImpl;
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -66,8 +67,9 @@ public class MainController {
     return "login";
   }
 
-  @GetMapping("/game")
-  public String gameP() {
-    return "game";
+  @GetMapping("/logout")
+  public String logoutP(HttpSession session) {
+    session.invalidate();
+    return "redirect:/";
   }
 }

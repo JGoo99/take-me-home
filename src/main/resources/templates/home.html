@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="/img/house.png" />
+  <link rel="stylesheet" href="/css/default.css" />
+  <title>탱미홈</title>
+</head>
+  <body>
+  <section id="contents">
+    <div class="wrapper">
+      <div class="title">
+        <h1 onclick="location.href='/'">Take Me Home</h1>
+      </div>
+      <div class="explain">
+        <p> " 들리는 음을 듣고 우주선을 드래그하여 음을 맞추는 음감게임 " </p>
+        <div class="buttons">
+          <a href=""> 게임플레이 방법 [Youtube] </a>
+        </div>
+      </div>
+      <div class="buttons">
+        <th:block sec:authorize="${isAnonymous()}">
+          <a href="/join">회원가입</a>
+          <a href="/login">로그인</a>
+        </th:block>
+        <th:block sec:authorize="hasRole('USER')">
+          <a href="/game">게임시작</a>
+          <a href="/logout">로그아웃</a>
+        </th:block>
+      </div>
+    </div>
+  </section>
+  <section id="copyright-wrap">
+    <p>Audio API Docs</p>
+    <div class="copyright">
+      <a href="https://theresassoundworld.com/#disconnect">Theresa's Sound World</a>
+      <a href="https://stuartmemo.com/">Stuart Memo</a>
+    </div>
+  </section>
+  </body>
+</html>

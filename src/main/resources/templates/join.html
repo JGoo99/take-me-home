@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="/img/house.png" />
+  <link rel="stylesheet" href="/css/member.css" />
+  <title>탱미홈</title>
+</head>
+<body>
+<section id="contents">
+  <div class="wrapper">
+    <div class="title">
+      <h1 onclick="location.href='/'">Take Me Home</h1>
+    </div>
+    <div class="explain">
+      <p>회원가입 정보를 입력해주세요.</p>
+    </div>
+    <form action="/joinProc" method="post" class="joinProc">
+      <div class="text-filed">
+        <div class="input-box">
+          <input id="username" type="text" name="username" placeholder="" required/>
+          <label for="username" class="label">닉네임</label>
+        </div>
+      </div>
+      <div class="example" th:unless="${errors.containsKey('username')}">
+        <p>최소 3자 이상 최대 18자 이하를 입력하시오.</p>
+      </div>
+      <div class="error" th:if="${errors.containsKey('username')}">
+        <p th:text="${errors.get('username')}"></p>
+      </div>
+      <div class="text-filed">
+        <div class="input-box">
+          <input id="password" type="password" name="password" placeholder="" required/>
+          <label for="password" class="label">비밀번호</label>
+        </div>
+      </div>
+      <div class="example" th:unless="${errors.containsKey('password')}">
+        <p>최소 3자 이상을 입력하시오.</p>
+      </div>
+      <div class="error" th:if="${errors.containsKey('password')}">
+        <p th:text="${errors.get('password')}"></p>
+      </div>
+      <div class="buttons">
+        <button type="submit" class="submit-button">회원가입</button>
+      </div>
+    </form>
+    <div class="buttons">
+      <a href="/">홈으로</a>
+    </div>
+  </div>
+</section>
+<section id="copyright-wrap">
+  <p>Audio API Docs</p>
+  <div class="copyright">
+    <a href="https://theresassoundworld.com/#disconnect">Theresa's Sound World</a>
+    <a href="https://stuartmemo.com/">Stuart Memo</a>
+  </div>
+</section>
+</body>
+</html>
