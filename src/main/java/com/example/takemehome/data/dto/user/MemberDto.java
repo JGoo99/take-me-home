@@ -30,6 +30,7 @@ public class MemberDto {
       .username(memberDto.getUsername())
       .password(memberDto.getPassword())
       .role(RoleType.ROLE_USER.toString())
+      .score(0)
       .build();
   }
 }

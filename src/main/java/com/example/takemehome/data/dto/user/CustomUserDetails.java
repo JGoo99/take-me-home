@@ -38,6 +38,10 @@ public class CustomUserDetails implements UserDetails {
     return user.getUsername();
   }
 
+  public Long getId() { return user.getId(); }
+
+  public int getScore() { return user.getScore(); }
+
   @Override
   public boolean isAccountNonExpired() {
     return true;

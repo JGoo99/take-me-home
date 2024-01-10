@@ -48,8 +48,8 @@ public class UserSecurityConfig {
       .authenticationProvider(userAuthenticationProvider())
       .authorizeHttpRequests((auth) -> auth
         .requestMatchers("/static/**", "/js/**", "/img/**", "/css/**").permitAll()
-        .requestMatchers("/", "/login", "/loginProc", "/join", "/joinProc", "/logout").permitAll()
-        .requestMatchers("/game/**").hasRole("USER")
+        .requestMatchers("/", "/login", "/loginProc", "/join", "/joinProc").permitAll()
+        .requestMatchers("/game", "/do", "/result", "/logout").hasRole("USER")
         .anyRequest().permitAll()
       );
 

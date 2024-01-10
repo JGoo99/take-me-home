@@ -12,10 +12,12 @@ import lombok.ToString;
 @ToString
 public class UserInfoDto {
   private String username;
+  private Integer score;
 
   public static UserInfoDto from(User user) {
     return UserInfoDto.builder()
       .username(user.getUsername())
+      .score(user.getScore())
       .build();
   }
 }

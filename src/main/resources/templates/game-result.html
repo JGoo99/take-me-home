@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="/img/house.png" />
+  <link rel="stylesheet" href="/css/game.css" />
+  <title>탱미홈</title>
+</head>
+<body>
+  <div class="header">
+    <div class="user-info">
+      <div class="username" th:text="${#authentication.principal.username + '님'}"></div>
+      <div class="score" th:text="${#authentication.principal.score + '점'}"></div>
+    </div>
+    <div class="buttons">
+      <a href="/logout">로그아웃</a>
+      <a href="/">홈으로</a>
+    </div>
+  </div>
+  <section id="contents">
+    <div class="wrapper">
+      <div class="title">
+        <h1 onclick="location.href='/'">Take Me Home</h1>
+      </div>
+      <div class="result">
+        <div class="image">
+          <img src="/img/complete.png" style="width: 190px">
+<!--          <img th:if="${isComplete}" src="/img/complete.png" style="width: 190px">-->
+        </div>
+        <div class="explain">
+          <p th:if="${isComplete}">미션 성공! 외계인이 무사히 집에 돌아갑니다!</p>
+          <p th:unless="${isComplete}">미션 실패! ...,,노숙외계인이 되었습니다.</p>
+        </div>
+      </div>
+      <div class="buttons">
+        <a th:if="${isComplete}" href="/game">Again!</a>
+        <a th:unless="${isComplete}" href="/game">Retry!</a>
+      </div>
+    </div>
+  </section>
+  <section id="copyright-wrap">
+    <p>Audio API Docs</p>
+    <div class="copyright">
+      <a href="https://theresassoundworld.com/#disconnect">Theresa's Sound World</a>
+      <a href="https://stuartmemo.com/">Stuart Memo</a>
+    </div>
+  </section>
+</body>
+</html>

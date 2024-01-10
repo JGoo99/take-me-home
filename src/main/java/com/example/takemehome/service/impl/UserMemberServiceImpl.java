@@ -1,7 +1,7 @@
 package com.example.takemehome.service.impl;
 
+import com.example.takemehome.data.dto.user.AnswerDto;
 import com.example.takemehome.data.dto.user.MemberDto;
-import com.example.takemehome.data.dto.user.UserInfoDto;
 import com.example.takemehome.data.entity.User;
 import com.example.takemehome.exception.UserException;
 import com.example.takemehome.repository.UserRepository;
@@ -17,7 +17,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.example.takemehome.type.ErrorCode.*;
+import static com.example.takemehome.type.ErrorCode.Duplicate_Username;
+import static com.example.takemehome.type.ErrorCode.User_NotFound;
 
 @Service
 @RequiredArgsConstructor
@@ -35,6 +36,14 @@ public class UserMemberServiceImpl implements UserMemberService {
     userRepository.save(MemberDto.toEntity(memberDto));
   }
 
+  @Override
+  public boolean isComplete(AnswerDto answerDto) {
+
+    int gap = Math.abs(answerDto.getMyPitch() - answerDto.getAnswerPitch());
+
+    return (gap <= 2);
+  }
+
   public void setEncodedPassword(MemberDto memberDto) {
     memberDto.setPassword(bCryptPasswordEncoder.encode(memberDto.getPassword()));
   }
@@ -45,15 +54,9 @@ public class UserMemberServiceImpl implements UserMemberService {
     }
   }
 
-  public User findByUsername(String username) {
-    return userRepository.findByUsername(username)
+  public User findByUserId(Long userId) {
+    return userRepository.findById(userId)
       .orElseThrow(() -> new UserException(User_NotFound));
-  }
-
-  public void checkPasswordMatch(CharSequence rawPassword, String encodedPassword) {
-    if (!bCryptPasswordEncoder.matches(rawPassword, encodedPassword)) {
-      throw new UserException(PASSWORD_NOT_MATCH);
-    }
   }
 
   public Map<String, String> getValidExceptionResult(List<ObjectError> allErrors) {

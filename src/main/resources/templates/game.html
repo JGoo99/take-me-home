@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="/img/house.png" />
+  <link rel="stylesheet" href="/css/game.css" />
+  <title>탱미홈</title>
+</head>
+<body>
+<script src="/js/tws.min.js"></script>
+<script src="/js/game-proc.js"></script>
+  <div class="header">
+    <div class="user-info">
+      <div class="username" th:text="${#authentication.principal.username + '님'}"></div>
+      <div class="score" th:text="${#authentication.principal.score + '점'}"></div>
+    </div>
+    <div class="buttons">
+      <a href="/logout">로그아웃</a>
+      <a href="/">홈으로</a>
+    </div>
+  </div>
+  <section id="contents">
+    <div class="wrapper">
+      <div class="title">
+        <h1 onclick="location.href='/'">Take Me Home</h1>
+      </div>
+      <div class="count-wrap">
+        <p id="count">3</p>
+      </div>
+      <div class="gamebox">
+        <!-- G3 - A5 -->
+        <form action="/do" method="post" id="do">
+          <div class="sliderbar">
+            <input type="range" id="slider" name="myPitch" min="196" max="880" />
+          </div>
+          <input type="hidden" id="answer" name="answerPitch">
+          <div class="buttons">
+            <button type="submit" id="submit-button">FINISH!</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section class="modal">
+    <div class="modal_wrap">
+      <div id="start">
+        <div class="intro">
+          <h1>Welcome</h1>
+          <p>절대음감 출입금지</p>
+        </div>
+        <div class="explain">
+          <h3></h3>
+          <p>들리는 음을 듣고 우주선을 드래그하여 같은 음정을 찾아주세요.</p>
+        </div>
+        <div class="btn">
+          <button id="startbtn">Game Start!</button>
+        </div>
+      </div>
+      <div class="end"></div>
+    </div>
+  </section>
+  <section id="copyright-wrap">
+    <p>Audio API Docs</p>
+    <div class="copyright">
+      <a href="https://theresassoundworld.com/#disconnect">Theresa's Sound World</a>
+      <a href="https://stuartmemo.com/">Stuart Memo</a>
+    </div>
+  </section>
+</body>
+</html>
