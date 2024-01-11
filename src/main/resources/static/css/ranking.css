@@ -1,0 +1,61 @@
+@import "default.css";
+
+.rank-table {
+    width: 300px;
+}
+
+table {
+    margin-top: 20px;
+    width: 100%;
+    cursor: default;
+}
+
+tr,
+td {
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #a5a5a5;
+}
+
+tr:hover {
+    background-color: #8d2e3e;
+}
+
+.paging-wrap a {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    color: black;
+    width: 100%;
+    height: 100%;
+    background-color: #d3d3d3;
+}
+
+.paging-wrap a:hover {
+    background-color: #c0c0c0;
+}
+
+.number .active {
+    background-color: #a5d6a7;
+}
+
+.number a {
+    background-color: #c8e6c9;
+}
+.number a:hover {
+    background-color: #a5d6a7;
+}
+
+ul {
+    display: flex;
+    padding: 14px;
+}
+
+li {
+    width: 30px;
+    height: 30px;
+    margin: 4px;
+    border-radius: 26px;
+    overflow: hidden;
+}

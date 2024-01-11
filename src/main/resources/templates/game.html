@@ -16,7 +16,7 @@
   <div class="header">
     <div class="user-info">
       <div class="username" th:text="${#authentication.principal.username + '님'}"></div>
-      <div class="score" th:text="${#authentication.principal.score + '점'}"></div>
+      <div class="score" th:text="${score + '점'}"></div>
     </div>
     <div class="buttons">
       <a href="/logout">로그아웃</a>
