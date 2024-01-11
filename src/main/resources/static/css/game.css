@@ -1,0 +1,126 @@
+@import "default.css";
+
+.count-wrap {
+    margin-top: 20px;
+}
+
+.count-wrap p {
+    font-size: 35pt;
+    color: #8d2e3e;
+}
+
+.gamebox {
+    display: flex;
+    column-gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 100px 100px;
+}
+
+#slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 7px;
+    border-radius: 5px;
+    background: #222;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+}
+
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    background: url("/img/ufo.png") center no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+#slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+#slider::-webkit-slider-thumb:active {
+    transform: scale(1.4, 0.9);
+}
+
+.modal {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal .modal_wrap {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    width: 600px;
+    height: 200px;
+    background-color: #222;
+    border-radius: 214px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.modal #start {
+    font-family: "GmarketSansBold", sans-serif;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.modal #start h1 {
+    color: #dedede;
+    font-size: 30px;
+    line-height: 1.2;
+    margin-top: 20px;
+}
+
+.modal #start .intro p {
+    font-size: 13px;
+    color: #bf1932;
+    margin-bottom: 20px;
+}
+
+.modal #start .explain {
+    font-family: "TheJamsil5Bold", sans-serif;
+    font-weight: 100;
+    font-size: 15px;
+    line-height: 1.2;
+    margin-top: 40px;
+}
+
+.modal #start #startbtn {
+    font-family: "GmarketSansBold", sans-serif;
+    margin-top: 13px;
+    padding: 3px 15px;
+    border-radius: 15px;
+    background-color: #daa520;
+    border: none;
+    color: #222;
+    font-size: 1.1em;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0);
+}
+
+.modal #start #startbtn:hover {
+    background-color: #b4891a;
+}
+
+.result {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
