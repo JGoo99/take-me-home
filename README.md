@@ -4,7 +4,8 @@
 
 [플레이 시연 영상 보러가기👉🏻👉🏻](https://youtu.be/pLfiAwebams?si=JCW6iWWsxNgLg3gX)
 
----
+<br/><br/>
+
 ## 목차
 - [플레이 및 컨셉](#플레이-및-컨셉)
 - [개요](#개요)
