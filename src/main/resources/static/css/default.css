@@ -159,13 +159,17 @@ button {
 }
 
 .copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 5px;
+    justify-content: center;
 }
 
 .copyright a {
-    display: flex;
-    justify-content: center;
-    margin: 10px;
+    width: fit-content;
+    margin-top: 10px;
+    border-bottom: 1px solid #3f455d;
     color: #a5a5a5;
 }
 

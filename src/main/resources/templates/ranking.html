@@ -17,12 +17,14 @@
       </div>
       <div class="explain">
         <p> 현재 랭킹 </p>
-        <p th:if="${list.totalPages} == 0" th:text="아직 플레이어 기록이 없습니다."></p>
+        <th:block th:if="${list.isEmpty()}">
+          <p style="margin-top: 20px" >아직 플레이어 기록이 없습니다.</p>
+        </th:block>
       </div>
       <div class="rank-table">
         <table>
           <tr th:each="x, i : ${list}">
-            <td th:text="${i.count + '등'}" style="width: 60px"></td>
+            <td th:text="${(page - 1) * 7 + i.count + '등'}" style="width: 60px"></td>
             <td th:text="${x.username}"></td>
             <td th:text="${x.score + '점'}"></td>
           </tr>
@@ -35,16 +37,17 @@
           prevLink=@{/ranking(page=${list.number})},
           nextLink=@{/ranking(page=${list.number + 2})},
           lastLink=@{/ranking(page=${list.totalPages})}"
-          />
-          <li th:style="${list.first}"><a th:href="${firstLink}"> << </a></li>
-          <li><a th:href="${list.first} ? '#' : ${prevLink}"> < </a></li>
-          <li class="number" th:each="p : ${#numbers.sequence(start, last)}">
-            <a th:classappend="${p == list.number + 1} ? 'active'"
-               th:href="@{/ranking(page=${p})}" th:text=" ${p} " >
-            </a>
-          </li>
-          <li><a th:href="${list.last} ? '#' : ${nextLink}"> > </a></li>
-          <li><a th:href="${lastLink}"> >> </a></li>
+          >
+            <li th:style="${list.first}"><a th:href="${firstLink}"> << </a></li>
+            <li><a th:href="${list.first} ? '#' : ${prevLink}"> < </a></li>
+            <li class="number" th:each="p : ${#numbers.sequence(start, last)}">
+              <a th:classappend="${p == list.number + 1} ? 'active'"
+                 th:href="@{/ranking(page=${p})}" th:text=" ${p} " >
+              </a>
+            </li>
+            <li><a th:href="${list.last} ? '#' : ${nextLink}"> > </a></li>
+            <li><a th:href="${lastLink}"> >> </a></li>
+          </th:block>
         </ul>
       </div>
     </div>

@@ -69,12 +69,13 @@ public class GameController {
 
     pageDto.setPageNum(page);
     Page<UserInfoDto> list = userMemberService.getRankingList(pageDto);
-    LOGGER.info(list.toString());
+    LOGGER.info(String.valueOf(list.isEmpty()));
     pageDto.setPaging(pageable, list.getTotalPages());
 
     model.addAttribute("list", list);
     model.addAttribute("startPage", pageDto.getStartPage());
-    model.addAttribute("endPage", pageDto.getEndPage());
+    model.addAttribute("endPage", pageDto.getEndPage());;
+    model.addAttribute("page", page);
 
     return "ranking";
   }
